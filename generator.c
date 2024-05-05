@@ -3,15 +3,7 @@
 #include <unistd.h>
 #include <string.h>
 
-#ifdef DEBUG
-#define genf(fp, ...) \
-	do { \
-		fprintf(fp, __VA_ARGS__); \
-		fprintf(fp, " // %s:%d\n", __FILE__, (__LINE__)-1); \
-	} while(0);
-#else
-#define genf(fp, ...) fprintf(fp, __VA_ARGS__);
-#endif
+#define genf(...) fprintf(fp, __VA_ARGS__);
 
 int main(int argc, char **argv)
 {
@@ -62,9 +54,9 @@ int main(int argc, char **argv)
 		return -1;
 	}
 
-	fprintf(fp, "/* This code has been generated\n");
-	fprintf(fp, " * by a generator. 2024 Andreas Nore\n");
-	fprintf(fp, " */ \n");
+	genf(fp, "/* This code has been generated\n");
+	genf(fp, " * by a generator. 2024 Andreas Nore\n");
+	genf(fp, " */ \n");
 	genf(fp, "#include <stdio.h>\n");
 	genf(fp, "#include <stdlib.h>\n");
 	genf(fp, "#include <string.h>\n\n");
