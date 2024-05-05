@@ -3,13 +3,13 @@
 #include <unistd.h>
 #include <string.h>
 
-#define genf(...) fprintf(fp, __VA_ARGS__);
+#define genf(msg) fprintf(fp, "%s\n", msg);
 
 int main(int argc, char **argv)
 {
 	FILE *fp   = NULL;
 	FILE *fp_m = NULL;
-	
+
 	char buffer[FILENAME_MAX];
 	char full_path[FILENAME_MAX + 256];
 
@@ -54,19 +54,21 @@ int main(int argc, char **argv)
 		return -1;
 	}
 
-	genf(fp, "/* This code has been generated\n");
-	genf(fp, " * by a generator. 2024 Andreas Nore\n");
-	genf(fp, " */ \n");
-	genf(fp, "#include <stdio.h>\n");
-	genf(fp, "#include <stdlib.h>\n");
-	genf(fp, "#include <string.h>\n\n");
-	genf(fp, "int main(int argc, char **argv)\n");
-	genf(fp, "{\n");
-	genf(fp, "\t(void)argc;\n");
-	genf(fp, "\t(void)argv;\n");
-	genf(fp, "\tprintf(\"Hello, World!\\nGenerated successfully!\\n\");\n");
-	genf(fp, "\n\treturn 0;\n");
-	genf(fp, "}\n");
+	genf(		"/* This code has been generated"							);
+	genf( 		" * by a generator. 2024 ABN"								);
+	genf( 		" */ "														);
+	genf( 		"#include <stdio.h>"										);
+	genf( 		"#include <stdlib.h>"										);
+	genf( 		"#include <string.h>"										);
+	genf( 		""															);
+	genf( 		"int main(int argc, char **argv)"							);
+	genf( 		"{"															);
+	genf( 		"\t(void)argc;"												);
+	genf( 		"\t(void)argv;"												);
+	genf( 		"\tprintf(\"Hello, World!\\nGenerated successfully!\\n\");"	);
+	genf( 		""															);
+	genf( 		"\treturn 0;"												);
+	genf( 		"}"															);
 
 	/* Generates the makefile as well */
 	char makefile[] = {
