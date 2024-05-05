@@ -23,5 +23,5 @@ name you want.
 if you need the line numbers for debugging purposes do
 ``` console
 make DEBUG=1
-````
+```
 and it will generate it with line numbers
