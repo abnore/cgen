@@ -15,8 +15,9 @@
 
 int main(int argc, char **argv)
 {
-	FILE *fp = NULL;
+	FILE *fp   = NULL;
 	FILE *fp_m = NULL;
+	
 	char buffer[FILENAME_MAX];
 	char full_path[FILENAME_MAX + 256];
 
@@ -133,7 +134,7 @@ int main(int argc, char **argv)
 			"\tmake distribute\t\t will make a .tgz package and clean.\n"
 			"\n\tmake deepclean\t\t deletes everything generated.\n"
 		   "\n"
-		   " - Andreas Nore\n", file_name);
+		   " - ABN 2024\n", file_name);
 	return 0;
 }
 
