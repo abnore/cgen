@@ -54,21 +54,21 @@ int main(int argc, char **argv)
 		return -1;
 	}
 
-	genf(		"/* This code has been generated"							);
-	genf( 		" * by a generator. 2024 ABN"								);
-	genf( 		" */ "														);
-	genf( 		"#include <stdio.h>"										);
-	genf( 		"#include <stdlib.h>"										);
-	genf( 		"#include <string.h>"										);
-	genf( 		""															);
-	genf( 		"int main(int argc, char **argv)"							);
-	genf( 		"{"															);
-	genf( 		"\t(void)argc;"												);
-	genf( 		"\t(void)argv;"												);
+	genf(		"/* This code has been generated"				);
+	genf( 		" * by a generator. 2024 ABN"	 				);
+	genf( 		" */ "								);
+	genf( 		"#include <stdio.h>"						);
+	genf( 		"#include <stdlib.h>"						);
+	genf( 		"#include <string.h>"						);
+	genf( 		""								);
+	genf( 		"int main(int argc, char **argv)"				);
+	genf( 		"{"								);
+	genf( 		"\t(void)argc;"							);
+	genf( 		"\t(void)argv;"							);
 	genf( 		"\tprintf(\"Hello, World!\\nGenerated successfully!\\n\");"	);
-	genf( 		""															);
-	genf( 		"\treturn 0;"												);
-	genf( 		"}"															);
+	genf( 		""								);
+	genf( 		"\treturn 0;"							);
+	genf( 		"}"								);
 
 	/* Generates the makefile as well */
 	char makefile[] = {
